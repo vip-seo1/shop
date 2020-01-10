@@ -1,1 +1,40 @@
-<p>store works!</p>
+<div class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand">SPORT STORE</a>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3 p-1">
+      <button class="btn btn-block btn-outline-primary">
+      Home
+      </button>
+      
+      <ng-container *ngFor="let item of categories">
+        <button class="btn btn-block btn-outline-primary">
+          {{item}}
+          </button>
+      </ng-container>
+
+      <button class="btn btn-block btn-danger mt-3">
+        Admin
+      </button>
+    
+    </div>
+
+    <div class="col-9 p-1">
+      <ng-container *ngFor="let product of productList">
+      <div class="card card-outline-primary">
+        <h4 class="card-header">
+          {{product.name}}
+          <span class="float-right badge badge-pill badge-primary">  {{product.price}}$</span>
+        </h4>
+        <div class="card-text p-1">
+          {{product.description}}
+          <button class="btn btn-success btn-sm float-right">
+            Add to card
+          </button>
+        </div>
+      </div>
+    </ng-container>
+    </div>
+  </div>
+</div>

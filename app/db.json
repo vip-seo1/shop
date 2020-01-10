@@ -1,0 +1,32 @@
+{
+  "products": [
+{
+  "id": 1,
+  "name": "Kayak",
+  "category": "Watersports",
+  "description": "A boat for one person",
+  "price": 275
+},
+{
+  "id": 2,
+  "name": "Lifejacket",
+  "category": "Watersports",
+  "description": "Protective and fashionable",
+  "price": 300
+},
+{
+  "id": 3,
+  "name": "Soccer Ball",
+  "category": "Soccer",
+  "description": "FIFA-approved size and weight",
+  "price": 400
+},
+{
+  "id": 4,
+  "name": "Soccer Ball",
+  "category": "Soccer",
+  "description": "FIFA-approved size and weight",
+  "price": 550
+}
+]
+}
