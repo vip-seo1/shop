@@ -8,7 +8,7 @@ import { Product, DataSourceService} from '../../model/data-source.service';
 export class StoreComponent implements OnInit {
   productList: Product[] = [];
   categories: Set<string> | string[] = [];
-
+  currentCategory: null;
 
   constructor(private ds: DataSourceService) { }
 
@@ -19,5 +19,7 @@ export class StoreComponent implements OnInit {
       const temp = products.map((p) => p.category);
       this.categories = new Set(temp);
    });
+
+   
   }
 }
