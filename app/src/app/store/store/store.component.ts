@@ -19,22 +19,24 @@ export class StoreComponent implements OnInit {
   constructor(private ds: DataSourceService) {}
 
   ngOnInit() {
-      if (this.currentCategory == null) {
+     
     this.ds.getProduct().subscribe((products: Product[]) => {
       this.productList = products;
       const temp = products.map((p) => p.category);
       this.categories = new Set(temp);
-    });
-  } else {this.getProduct();}
-    }
+      
 
+    });
+  }
      getCategory(n:any){
        this.currentCategory = n;
      }
      
    getProduct(): Product[] {
-     
-        return this.productList.filter((product) => product.category === this.currentCategory);
+     if (this.currentCategory == null) {
+       return this.productList;
+     }
+       else {return this.productList.filter((product) => product.category === this.currentCategory);}
       
     }
 }
