@@ -30,7 +30,7 @@
         </h4>
         <div class="card-text p-1">
           {{product.description}}
-          <button class="btn btn-success btn-sm float-right">
+          <button (click)="addToCart(product)" class="btn btn-success btn-sm float-right">
             Add to card
           </button>
         </div>

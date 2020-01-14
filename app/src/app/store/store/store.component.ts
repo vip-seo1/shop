@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product, DataSourceService } from '../../model/data-source.service';
+import { Router } from '@angular/router';
+import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'app-store',
@@ -12,7 +14,11 @@ export class StoreComponent implements OnInit {
   categories: Set < string > | string[] = [];
   currentCategory: null;
 
-  constructor(private ds: DataSourceService) {}
+  constructor(
+    private ds: DataSourceService,
+    private router: Router,
+    public cartService: CartService
+    ) {}
 
   ngOnInit() {
 
@@ -33,5 +39,9 @@ export class StoreComponent implements OnInit {
     } else {
       return this.productList.filter((product) => product.category === this.currentCategory);
     }
+  }
+  addToCart(product: Product) {
+    this.cartService.addProductLine(product);
+    this.router.navigate(['/cart']);
   }
 }
