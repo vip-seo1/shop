@@ -9,7 +9,7 @@
       </button>
       
       <ng-container *ngFor="let item of categories">
-        <button class="btn btn-block btn-outline-primary">
+        <button (click)="getCategory(item)" class="btn btn-block btn-outline-primary">
           {{item}}
           </button>
       </ng-container>
@@ -21,7 +21,8 @@
     </div>
 
     <div class="col-9 p-1">
-      <ng-container *ngFor="let product of productList">
+      <!-- <ng-container *ngFor="let product of productList"> -->
+      <ng-container *ngFor="let product of getProduct()">
       <div class="card card-outline-primary">
         <h4 class="card-header">
           {{product.name}}
