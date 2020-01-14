@@ -1,11 +1,6 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-import {
-  Product,
-  DataSourceService
-} from '../../model/data-source.service';
+import { Component, OnInit } from '@angular/core';
+import { Product, DataSourceService } from '../../model/data-source.service';
+
 @Component({
   selector: 'app-store',
   templateUrl: './store.component.html',
@@ -19,25 +14,25 @@ export class StoreComponent implements OnInit {
   constructor(private ds: DataSourceService) {}
 
   ngOnInit() {
-     
+
     this.ds.getProduct().subscribe((products: Product[]) => {
       this.productList = products;
       const temp = products.map((p) => p.category);
       this.categories = new Set(temp);
-      
+
 
     });
   }
-     getCategory(n:any){
-       this.currentCategory = n;
-     }
-     
-   getProduct(): Product[] {
-     if (this.currentCategory == null) {
-       return this.productList;
-     }
-       else {return this.productList.filter((product) => product.category === this.currentCategory);}
-      
-    }
-}
+  getCategory(n: any) {
+    this.currentCategory = n;
+  }
 
+  getProduct(): Product[] {
+    if (this.currentCategory == null) {
+      return this.productList;
+    } else {
+      return this.productList.filter((product) => product.category === this.currentCategory);
+    }
+
+  }
+}
