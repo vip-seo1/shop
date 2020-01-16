@@ -12,9 +12,9 @@ export class OrderService {
   constructor(private http: HttpClient) { }
 
   addOrder(order: Order): Observable<any>{
-    return this.http.post('http://localhost:300/orders', order);
+    return this.http.post('http://localhost:3000/orders', order);
   }
   getOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>('http://localhost:300/orders');
+    return this.http.get<Order[]>('http://localhost:3000/orders');
   }
 }
