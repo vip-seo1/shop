@@ -19,7 +19,7 @@
       "name": "Soccer Ball",
       "category": "Soccer",
       "description": "FIFA-approved size and weight",
-      "price": 19.50
+      "price": 19.5
     },
     {
       "id": 4,
@@ -64,5 +64,31 @@
       "price": 1200
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "lines": [],
+      "client": {
+        "name": "",
+        "address": ""
+      },
+      "id": 1
+    },
+    {
+      "lines": [
+        {
+          "name": "Lifejacket",
+          "quantity": 1,
+          "price": 48.95,
+          "subtotal": 48.95,
+          "id": 2
+        }
+      ],
+      "total": 48.95,
+      "client": {
+        "name": "hgjgh",
+        "address": "ghjghj"
+      },
+      "id": 2
+    }
+  ]
 }

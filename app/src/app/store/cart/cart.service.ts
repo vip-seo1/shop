@@ -13,6 +13,7 @@ export class CartService {
   
   
   constructor() {}
+  
   clear() {
     this.productLines = [];
     this.total = 0;
