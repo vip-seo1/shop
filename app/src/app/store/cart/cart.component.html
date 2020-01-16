@@ -22,7 +22,7 @@
         <td>{{product.price}}</td>
         <td>{{product.subtotal}}</td>
         <td>
-          <button class="btn btn-sm btn-danger">Remove</button>
+          <button class="btn btn-sm btn-danger" (click)="cartService.deleteLine(product.id)">Remove</button>
         </td>
       </tr>
   </ng-container>

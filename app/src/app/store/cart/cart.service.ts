@@ -18,6 +18,13 @@ export class CartService {
     return this.productLines;
   }
 
+  
+  deletetLine(id: number) {
+    return this.productLines.splice(id, 1);
+
+  }
+
+
   addProductLine(product: Product) {
     const line = new Line (
       product.name,
