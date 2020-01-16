@@ -17,9 +17,11 @@ export class ProductsComponent implements OnInit {
      });
   }
   
-  del (id:number) {
-    this.ds.deleteProduct(id).subscribe((products: Product[]) => {
-      this.productList = products;
+  del(id:number) {
+    this.ds.deleteProduct(id).subscribe(() => {
+      this.ds.getProduct().subscribe((products: Product[]) => {
+        this.productList = products;
+       });
      });
   }
 }

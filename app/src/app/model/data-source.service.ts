@@ -22,6 +22,6 @@ export class DataSourceService {
   }
   
   deleteProduct(id: number): Observable<Product[]> {
-    return this.http.delete<Product[]>('http://localhost:3000/products/${id}')
-}
+    return this.http.delete<Product[]>(`http://localhost:3000/products/${id}`)
+  }
 }
