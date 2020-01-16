@@ -14,9 +14,14 @@ export class Product {
 
 @Injectable()
 export class DataSourceService {
+
   constructor(private http: HttpClient) {}
+
   getProduct(): Observable<Product[]> {
     return this.http.get<Product[]>('http://localhost:3000/products')
   }
   
+  deleteProduct(id: number): Observable<Product[]> {
+    return this.http.delete<Product[]>('http://localhost:3000/products/${id}')
+}
 }

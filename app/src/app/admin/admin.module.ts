@@ -4,11 +4,12 @@ import { LoginComponent } from './login/login.component';
 import { ProductsComponent } from './products/products.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { OrdersComponent } from './orders/orders.component';
 
 
 
 @NgModule({
-  declarations: [LoginComponent, ProductsComponent],
+  declarations: [LoginComponent, ProductsComponent, OrdersComponent],
   imports: [
     ReactiveFormsModule,
     RouterModule,
