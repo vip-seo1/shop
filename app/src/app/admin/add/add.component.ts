@@ -12,9 +12,21 @@ import { Router } from '@angular/router';
 export class AddComponent implements OnInit {
   form: FormGroup;
   
-  constructor(private ds: DataSourceService, private router: Router ) { }
+  constructor(
+    private ds: DataSourceService, 
+    private router: Router 
+    ) { }
+
+  productList: Product[] = [];
+  id: number;
 
   ngOnInit() {
+    this.ds.getProduct().subscribe((products: Product[]) => {
+      this.productList = products;
+      this.id = this.productList[this.productList.length - 1].id;
+      
+     });
+     
     
     this.form = new FormGroup ({
       product_name: new FormControl('', Validators.required),
@@ -25,7 +37,9 @@ export class AddComponent implements OnInit {
   }
 
   save() {
-       const product = new Product(11,
+    console.log(this.id);
+       const product = new Product(
+         this.id + 1,
          this.form.get('product_name').value, 
          this.form.get('product_category').value,
          this.form.get('product_description').value,
@@ -38,6 +52,5 @@ export class AddComponent implements OnInit {
              () => {
                alert('error');
              });
-           
   }
 }

@@ -14,7 +14,9 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     this.ds.getProduct().subscribe((products: Product[]) => {
       this.productList = products;
-     });
+    });
+     
+     
   }
   
   del(id:number) {
