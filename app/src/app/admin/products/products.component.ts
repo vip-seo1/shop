@@ -15,10 +15,12 @@ export class ProductsComponent implements OnInit {
     this.ds.getProduct().subscribe((products: Product[]) => {
       this.productList = products;
     });
-     
-     
   }
   
+  getProduct(): Product[] {
+    return this.productList;
+  }
+
   del(id:number) {
     this.ds.deleteProduct(id).subscribe(() => {
       this.ds.getProduct().subscribe((products: Product[]) => {

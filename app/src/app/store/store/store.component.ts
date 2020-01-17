@@ -40,6 +40,7 @@ export class StoreComponent implements OnInit {
       return this.productList.filter((product) => product.category === this.currentCategory);
     }
   }
+  
   addToCart(product: Product) {
     this.cartService.addProductLine(product);
     this.router.navigate(['/cart']);
