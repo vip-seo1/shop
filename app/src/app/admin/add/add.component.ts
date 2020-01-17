@@ -24,10 +24,8 @@ export class AddComponent implements OnInit {
     this.ds.getProduct().subscribe((products: Product[]) => {
       this.productList = products;
       this.id = this.productList[this.productList.length - 1].id;
-      
      });
      
-    
     this.form = new FormGroup ({
       product_name: new FormControl('', Validators.required),
       product_category: new FormControl('', Validators.required),
