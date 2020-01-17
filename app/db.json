@@ -61,23 +61,6 @@
     {
       "lines": [
         {
-          "name": "Kayak",
-          "quantity": 1,
-          "price": 275,
-          "subtotal": 275,
-          "id": 1
-        }
-      ],
-      "total": 275,
-      "client": {
-        "name": "dfgd",
-        "address": "dfgdf"
-      },
-      "id": 1
-    },
-    {
-      "lines": [
-        {
           "name": "Soccer Ball",
           "quantity": 1,
           "price": 19.5,

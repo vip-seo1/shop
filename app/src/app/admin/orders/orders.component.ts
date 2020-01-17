@@ -20,4 +20,12 @@ export class OrdersComponent implements OnInit {
      });
   }
 
+
+  delOrder(id:number) {
+    this.os.deleteOrder(id).subscribe(() => {
+      this.os.getOrders().subscribe((orders: Order[]) => {
+        this.orderList = orders;
+       });
+     });
+  }
 }

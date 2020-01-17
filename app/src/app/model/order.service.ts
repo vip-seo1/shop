@@ -16,5 +16,8 @@ export class OrderService {
   getOrders(): Observable<Order[]> {
     return this.http.get<Order[]>('http://localhost:3000/orders');
   }
+  deleteOrder(id: number): Observable<Order[]> {
+    return this.http.delete<Order[]>(`http://localhost:3000/orders/${id}`)
+  }
 }
 
