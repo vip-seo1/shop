@@ -6,6 +6,7 @@ import { CheckoutComponent } from './store/checkout/checkout.component';
 import { LoginComponent } from './admin/login/login.component';
 import { ProductsComponent } from './admin/products/products.component';
 import { AuthGuard } from './admin/auth.guard';
+import { OrdersComponent } from './admin/orders/orders.component';
 
 
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'checkout', component: CheckoutComponent},
   {path: 'login', component: LoginComponent},
   {path: 'products', component: ProductsComponent, canActivate: [AuthGuard]},
+  {path: 'orders', component: OrdersComponent, canActivate: [AuthGuard]},
   {path: '**', redirectTo: 'store'}
 ];
 

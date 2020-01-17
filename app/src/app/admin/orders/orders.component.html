@@ -1,1 +1,54 @@
-<p>orders works!</p>
+<div class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand">ADMIN PANEL SPORT STORE</a>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3 p-1">
+        <button routerLink="/products" class="btn btn-block btn-outline-primary">
+        Products
+        </button>
+        <button routerLink="/orders" class="btn btn-block btn-outline-primary">
+          Orders
+          </button>
+        
+        <button (click)="logout()" routerLink="/" class="btn btn-block btn-danger mt-3">
+          Logout
+        </button>
+      
+      </div>
+  
+      <div class="col-8 p-1">
+        <table class="align-middle table table-striped table-sm table-bordered m-2">
+          <thead class="thead-dark">
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Product</th>
+              <th>Total price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let order of orderList"> 
+              <tr class="align-middle">
+                <td class="align-middle">{{order.client.name}}</td>
+                <td class="align-middle">{{order.client.address}}</td>
+                <td>
+                    <ng-container *ngFor="let i of order.lines">
+                        {{i.name}}<br/>
+                    </ng-container>
+                </td>
+                <td>{{order.total}}</td>
+                <td>
+                  <button class="btn btn-sm btn-danger" (click)="del(product.id)">Remove</button>
+                </td>
+              </tr>
+          </ng-container>
+          </tbody>
+        
+        </table>
+        
+      </div>
+    </div>
+  </div>
+  
+  

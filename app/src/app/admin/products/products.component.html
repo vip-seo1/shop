@@ -11,7 +11,7 @@
         Orders
         </button>
       
-      <button routerLink="/login" class="btn btn-block btn-danger mt-3">
+      <button (click)="logout()" routerLink="/" class="btn btn-block btn-danger mt-3">
         Logout
       </button>
     
@@ -19,7 +19,7 @@
 
     <div class="col-9 p-1">
       <table class="table table-striped table-sm table-bordered m-2">
-        <thead>
+        <thead class="thead-dark">
           <tr>
             <th>ID</th>
             <th>Name</th>
@@ -42,8 +42,9 @@
         </tbody>
       
       </table>
-      
+      <button type="button" class="btn btn-primary">ADD PRODUCT</button>
     </div>
+    
   </div>
 </div>
 
