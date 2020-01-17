@@ -81,6 +81,38 @@
         "address": "Dnepr"
       },
       "id": 2
+    },
+    {
+      "lines": [
+        {
+          "name": "Soccer Ball",
+          "quantity": 1,
+          "price": 19.5,
+          "subtotal": 19.5,
+          "id": 3
+        },
+        {
+          "name": "Kayak",
+          "quantity": 1,
+          "price": 275,
+          "subtotal": 275,
+          "id": 1
+        }
+      ],
+      "total": 294.5,
+      "client": {
+        "name": "admin",
+        "address": "Titova"
+      },
+      "id": 3
+    },
+    {
+      "lines": [],
+      "client": {
+        "name": "1",
+        "address": "1"
+      },
+      "id": 4
     }
   ]
 }

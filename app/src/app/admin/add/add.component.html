@@ -1,1 +1,43 @@
-<p>add works!</p>
+<div class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand">ADMIN PANEL SPORT STORE</a>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3 p-1">
+        <button routerLink="/products" class="btn btn-block btn-outline-primary">
+        Products
+        </button>
+        <button routerLink="/orders" class="btn btn-block btn-outline-primary">
+          Orders
+          </button>
+        <button (click)="logout()" routerLink="/" class="btn btn-block btn-danger mt-3">
+          Logout
+        </button>
+      </div>
+  
+      <div class="col-9 p-1">
+        <form [formGroup]="form" novalidate>
+            <div class="form-group">
+              <label>Product name</label>
+              <input class="form-control" formControlName="product_name"/>
+            </div>
+            <div class="form-group">
+              <label>Category</label>
+              <input class="form-control" formControlName="product_category"/>
+            </div>
+            <div class="form-group">
+              <label>Description</label>
+              <input class="form-control" formControlName="product_description"/>
+            </div>
+            <div class="form-group">
+              <label>Price</label>
+              <input class="form-control" formControlName="product_price"/>
+            </div>
+        </form>
+        <button routerLink="/products" class="btn btn-dark mr-1">Back</button>
+        <button (click)="save()"  class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+  
+  
