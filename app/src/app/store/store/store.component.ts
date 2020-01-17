@@ -13,7 +13,7 @@ export class StoreComponent implements OnInit {
   productList: Product[] = [];
   categories: Set < string > | string[] = [];
   currentCategory: null;
-
+  
   constructor(
     private ds: DataSourceService,
     private router: Router,
@@ -35,12 +35,12 @@ export class StoreComponent implements OnInit {
 
   getProduct(): Product[] {
     if (this.currentCategory == null) {
-      return this.productList;
+       return this.productList;
     } else {
       return this.productList.filter((product) => product.category === this.currentCategory);
     }
   }
-  
+
   addToCart(product: Product) {
     this.cartService.addProductLine(product);
     this.router.navigate(['/cart']);
