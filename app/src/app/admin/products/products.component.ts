@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataSourceService, Product } from 'src/app/model/data-source.service';
+import { AuthService } from 'src/app/admin/auth.service';
 
 @Component({
   selector: 'app-products',
@@ -8,7 +9,10 @@ import { DataSourceService, Product } from 'src/app/model/data-source.service';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private ds:  DataSourceService ) { }
+  constructor(
+    private ds:  DataSourceService,
+    private as: AuthService ) { }
+    
   productList: Product[] = [];
 
   ngOnInit() {
@@ -19,6 +23,10 @@ export class ProductsComponent implements OnInit {
   
   getProduct(): Product[] {
     return this.productList;
+  }
+
+  logout() {
+    this.as.isAuth = false;
   }
 
   del(id:number) {

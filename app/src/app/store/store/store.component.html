@@ -4,12 +4,12 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-3 p-1">
-      <button (click)="getCategory(null)" class="btn btn-block btn-outline-primary">
+      <button [ngClass]="{'active': getCurrentCategory()==null }" (click)="setCurrentCategory(null)" class="btn btn-block btn-outline-primary">
       Home
       </button>
       
       <ng-container *ngFor="let item of categories">
-        <button (click)="getCategory(item)" class="btn btn-block btn-outline-primary">
+        <button [ngClass]="{'active': getCurrentCategory()==item }" (click)="setCurrentCategory(item)" class="btn btn-block btn-outline-primary">
           {{item}}
           </button>
       </ng-container>
@@ -21,7 +21,6 @@
     </div>
 
     <div class="col-9 p-1">
-      <!-- <ng-container *ngFor="let product of productList"> -->
       <ng-container *ngFor="let product of getProduct()">
       <div class="card card-outline-primary">
         <h4 class="card-header">
@@ -38,7 +37,22 @@
     </ng-container>
     <div class="text-center">
     <hr>
-    <button (click)="getProduct()" type="button" class="btn btn-info">Next products</button>
+    <!-- <button (click)="getProduct()" type="button" class="btn btn-info">Next products</button> -->
+    <nav aria-label="...">
+      <ul class="pagination pagination">
+        <!-- <li class="page-item active" aria-current="page">
+          <span class="page-link">
+            1
+            <span class="sr-only">(current)</span>
+          </span>
+        </li> -->
+        <ng-container *ngFor="let item of getPaginationPageCount()">
+        <li class="page-item" [ngClass]="{'active': getCurrentPage()==item }" (click)="getProduct(item);">
+          <a class="page-link">{{item}}</a>
+        </li>
+        </ng-container>
+      </ul>
+    </nav>
     <hr>
     </div>
   </div>
