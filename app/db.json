@@ -111,13 +111,6 @@
       "category": "Chess",
       "description": "A fun game for the family",
       "price": 75
-    },
-    {
-      "id": 17,
-      "name": "fghf",
-      "category": "new category",
-      "description": "dfgdfg",
-      "price": 23
     }
   ],
   "orders": [
@@ -168,23 +161,6 @@
         "address": "Titova"
       },
       "id": 3
-    },
-    {
-      "lines": [
-        {
-          "name": "Lifejacket",
-          "quantity": 1,
-          "price": 48.95,
-          "subtotal": 48.95,
-          "id": 2
-        }
-      ],
-      "total": 48.95,
-      "client": {
-        "name": "кнк",
-        "address": "кенке"
-      },
-      "id": 4
     }
   ]
 }
