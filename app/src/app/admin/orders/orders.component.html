@@ -4,10 +4,10 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-3 p-1">
-        <button routerLink="/products" class="btn btn-block btn-outline-primary">
+        <button [ngClass]="{'active': statusProduct }" (click)="toggle()" routerLink="/products" class="btn btn-block btn-outline-primary">
         Products
         </button>
-        <button routerLink="/orders" class="btn btn-block btn-outline-primary">
+        <button [ngClass]="{'active': statusOrder }" (click)="toggle()" routerLink="/orders" class="btn btn-block btn-outline-primary">
         Orders
         </button>
         <button (click)="logout()" routerLink="/" class="btn btn-block btn-danger mt-3">

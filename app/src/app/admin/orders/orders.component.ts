@@ -9,6 +9,8 @@ import { Order } from 'src/app/model/order.model';
   styleUrls: ['./orders.component.scss']
 })
 export class OrdersComponent implements OnInit {
+  statusProduct:boolean = false;
+  statusOrder:boolean = true;  
 
   constructor(private os:  OrderService ) { }
   orderList: Order[] = [];
@@ -20,6 +22,10 @@ export class OrdersComponent implements OnInit {
      });
   }
 
+  public toggle() {
+    this.statusProduct = !this.statusProduct;
+    this.statusOrder = !this.statusOrder;
+  }
 
   delOrder(id:number) {
     this.os.deleteOrder(id).subscribe(() => {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product, DataSourceService } from '../../model/data-source.service';
 import { Router } from '@angular/router';
 import { CartService } from '../cart/cart.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { CartService } from '../cart/cart.service';
 })
 
 export class StoreComponent implements OnInit {
+  form: FormGroup;
   productList: Product[] = [];
   categories: Set < string > | string[] = [];
   currentCategory: null;
@@ -25,11 +27,13 @@ export class StoreComponent implements OnInit {
     ) {}
 
   ngOnInit() {
-    this.ds.getProduct().subscribe((products: Product[]) => {
+    this.ds.getProducts().subscribe((products: Product[]) => {
       this.productList = products;
       const temp = products.map((p) => p.category);
       this.categories = new Set(temp);
-     
+    });
+    this.form = new FormGroup ({
+      name: new FormControl('', Validators.required),
     });
   }
   
@@ -46,7 +50,6 @@ export class StoreComponent implements OnInit {
     return this.currentPage;
   }
   
-
   getProduct(page: number) {
     
     if(page != undefined) {
@@ -79,12 +82,14 @@ export class StoreComponent implements OnInit {
 
     return arr;
   }
-
   
   addToCart(product: Product) {
     this.cartService.addProductLine(product);
     this.router.navigate(['/cart']);
   }
-
+  
+  changeItem(e) {
+   this.itemsPerPage = this.form.get('name').value;
+  }
   
 }

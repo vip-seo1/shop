@@ -4,10 +4,10 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-3 p-1">
-      <button routerLink="/products" class="btn btn-block btn-outline-primary">
+      <button [ngClass]="{'active': statusProduct }" (click)="toggle()" routerLink="/products" class="btn btn-block btn-outline-primary">
       Products
       </button>
-      <button routerLink="/orders" class="btn btn-block btn-outline-primary">
+      <button [ngClass]="{'active': statusOrder }" (click)="toggle()" routerLink="/orders" class="btn btn-block btn-outline-primary">
         Orders
         </button>
       
@@ -35,6 +35,7 @@
               <td>{{product.category}}</td>
               <td>{{product.price}}</td>
               <td>
+                <button class="btn btn-sm btn-warning mr-1" (click)="edit(product.id)">Edit</button>
                 <button class="btn btn-sm btn-danger" (click)="del(product.id)">Remove</button>
               </td>
             </tr>

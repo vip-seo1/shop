@@ -21,7 +21,7 @@ export class AddComponent implements OnInit {
   id: number;
 
   ngOnInit() {
-    this.ds.getProduct().subscribe((products: Product[]) => {
+    this.ds.getProducts().subscribe((products: Product[]) => {
       this.productList = products;
       this.id = this.productList[this.productList.length - 1].id;
      });

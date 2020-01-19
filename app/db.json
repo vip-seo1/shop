@@ -5,7 +5,7 @@
       "name": "Kayak",
       "category": "Watersports",
       "description": "A boat for one person",
-      "price": 275
+      "price": 47
     },
     {
       "id": 2,
@@ -19,7 +19,7 @@
       "name": "Soccer Ball",
       "category": "Soccer",
       "description": "FIFA-approved size and weight",
-      "price": 19.5
+      "price": 202
     },
     {
       "id": 4,
@@ -33,7 +33,7 @@
       "name": "Stadium",
       "category": "Soccer",
       "description": "Flat-packed 35,000-seat stadium",
-      "price": 79500
+      "price": 79
     },
     {
       "id": 6,
@@ -89,7 +89,7 @@
       "name": "Stadium",
       "category": "Soccer",
       "description": "Flat-packed 35,000-seat stadium",
-      "price": 79500
+      "price": 79
     },
     {
       "id": 14,
