@@ -15,6 +15,7 @@ export class CartService {
   clear() {
     this.productLines = [];
     this.total = 0;
+    this.product_number = 0;
   }
 
   getProductLines(): Line[] {
@@ -25,7 +26,7 @@ export class CartService {
     this.productLines = this.productLines.filter((line: Line) => line.id !== id);
     this.product_number = this.product_number - 1;
   }
- 
+
   addProductLine(product: Product) {
     const line = new Line (
       product.name,
@@ -47,12 +48,13 @@ export class CartService {
     return this.product_number;
   }
 
-  private calculateSubTotal(quantiry, price): number {
+  public calculateSubTotal(quantiry, price): number {
     return price * quantiry;
   }
 
   public calculateTotal(): number {
     return this.total = this.productLines.map(line => line.subtotal).reduce((a, b) => a + b, 0);
   }
-}
+
+  }
  {}

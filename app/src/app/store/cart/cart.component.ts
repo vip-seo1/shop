@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CartService } from './cart.service';
 import { Line } from 'src/app/model/line.model';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 
 export class CartComponent implements OnInit {
 list: Line[] = [];
+form: FormGroup;
   
   constructor(
     
@@ -21,6 +23,9 @@ list: Line[] = [];
 
   ngOnInit() {
     this.list = this.cartService.getProductLines();
+    this.form = new FormGroup ({
+      quantity: new FormControl('', Validators.required),
+    });
   }
 
   backToHome() {
@@ -32,5 +37,10 @@ list: Line[] = [];
     this.cartService.calculateTotal();
     this.list = this.cartService.getProductLines();
 
+  }
+
+  public changeQuantity(price) {
+   return this.cartService.calculateSubTotal(this.form.get('quantity').value, price);
+  //  return this.cartService.calculateSubTotal(this.form.get('quantity').value, price);
   }
 }
