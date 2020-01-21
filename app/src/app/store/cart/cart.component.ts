@@ -28,6 +28,14 @@ form: FormGroup;
     });
   }
 
+addProductLine(product) { 
+  this.cartService.addProductLine(product);
+}
+
+delProductLine(product) { 
+  this.cartService.delProductLine(product);
+}
+
   backToHome() {
     this.router.navigate(['/']);
   }
@@ -40,6 +48,5 @@ form: FormGroup;
 
   public changeQuantity(price) {
    return this.cartService.calculateSubTotal(this.form.get('quantity').value, price);
-  //  return this.cartService.calculateSubTotal(this.form.get('quantity').value, price);
   }
 }

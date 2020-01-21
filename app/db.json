@@ -1,13 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Kayak",
-      "category": "Watersports",
-      "description": "A boat for one person",
-      "price": 47
-    },
-    {
       "id": 2,
       "name": "Lifejacket",
       "category": "Watersports",
