@@ -185,37 +185,6 @@
         "address": "sdfsdf"
       },
       "id": 4
-    },
-    {
-      "lines": [
-        {
-          "name": "Kayak",
-          "quantity": 1,
-          "price": 47,
-          "subtotal": 47,
-          "id": 1
-        },
-        {
-          "name": "Lifejacket",
-          "quantity": 1,
-          "price": 48.95,
-          "subtotal": 48.95,
-          "id": 2
-        },
-        {
-          "name": "Soccer Ball",
-          "quantity": 1,
-          "price": 2022,
-          "subtotal": 2022,
-          "id": 3
-        }
-      ],
-      "total": 2117.95,
-      "client": {
-        "name": "sdfs",
-        "address": "sdds"
-      },
-      "id": 5
     }
   ]
 }
