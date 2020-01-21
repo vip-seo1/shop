@@ -18,7 +18,7 @@ export class StoreComponent implements OnInit {
   currentCategory: null;
   currentPage: number = 1;
   itemsPerPage: number = 4;
-  
+  orderCount: number;
 
   constructor(
     private ds: DataSourceService,
@@ -88,8 +88,14 @@ export class StoreComponent implements OnInit {
     this.router.navigate(['/cart']);
   }
   
-  changeItem(e) {
+  getCartProducts(){
+    this.orderCount = this.cartService.getCart();
+    return this.cartService.getCart();
+  }
+  
+  changeItem() {
    this.itemsPerPage = this.form.get('name').value;
+   this.currentPage = 1;
   }
   
 }

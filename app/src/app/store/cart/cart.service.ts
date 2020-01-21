@@ -8,7 +8,7 @@ import { Product } from '../../model/data-source.service';
 export class CartService {
   productLines: Line[] = [];
   total: number;
-  
+  product_number: number;
   
   
   
@@ -22,12 +22,11 @@ export class CartService {
   getProductLines(): Line[] {
     return this.productLines;
   }
-
   
   deleteLine(id: number) {
-    this.productLines = this.productLines.filter((line: Line) => line.id !== id) 
+    this.productLines = this.productLines.filter((line: Line) => line.id !== id);
+    this.product_number = this.product_number - 1;
   }
-
  
   addProductLine(product: Product) {
     const line = new Line (
@@ -39,19 +38,23 @@ export class CartService {
     );
     this.productLines.push(line);
     this.total = this.calculateTotal(); 
+    this.product_number = this.productLines.length;
   }
 
   getTotal(): number{
     return this.total;
   }
 
+  getCart(): number {
+    return this.product_number;
+  }
+
   private calculateSubTotal(quantiry, price): number {
     return price * quantiry;
   }
+
   public calculateTotal(): number {
     return this.total = this.productLines.map(line => line.subtotal).reduce((a, b) => a + b, 0);
   }
-
-  
 }
  {}

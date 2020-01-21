@@ -27,8 +27,8 @@ list: Line[] = [];
   backToHome() {
     this.router.navigate(['/']);
   }
-
-  deleteLine(id) {
+   
+  deleteLine(id: number) {
     this.cartService.deleteLine(id);
     this.cartService.calculateTotal();
     this.list = this.cartService.getProductLines();

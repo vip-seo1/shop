@@ -1,11 +1,20 @@
 <div class="navbar navbar-dark bg-dark">
   <a class="navbar-brand">SPORT STORE</a>
+    <div class="text-right text-white bg-dark">
+      <ng-container *ngIf="getCartProducts() > 0">
+        <p>{{orderCount}} товара(ов)
+        <i (click)="getCartProducts()" class="material-icons md-48">
+          shopping_cart
+        </i>
+        </p>
+    </ng-container>
+  </div>
 </div>
 <div class="container-fluid">
   <div class="row">
     <div class="col-3 p-1">
       <button [ngClass]="{'active': getCurrentCategory()==null }" (click)="setCurrentCategory(null)" class="btn btn-block btn-outline-primary">
-      Home
+       Home
       </button>
       
       <ng-container *ngFor="let item of categories">
@@ -17,7 +26,6 @@
       <button routerLink="/login" class="btn btn-block btn-danger mt-3">
         Admin
       </button>
-    
     </div>
 
     <div class="col-9 p-1">
@@ -36,7 +44,7 @@
       </div>
     </ng-container>
     <div [formGroup]="form" class="mt-2 float-left">
-      <select formControlName="name" (change)="changeItem($event)" [value]="4" class="form-control">
+      <select formControlName="name" (change)="changeItem()" [value]="4" class="form-control">
         <option value="4">4 per Page</option>
         <option value="5">5 per Page</option>
         <option value="6">6 per Page</option>
