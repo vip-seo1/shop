@@ -10,8 +10,6 @@ export class CartService {
   total: number;
   product_number: number;
   
-  
-  
   constructor() {}
   
   clear() {
