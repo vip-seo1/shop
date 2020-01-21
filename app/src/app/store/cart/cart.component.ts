@@ -36,7 +36,6 @@ form: FormGroup;
     this.cartService.deleteLine(id);
     this.cartService.calculateTotal();
     this.list = this.cartService.getProductLines();
-
   }
 
   public changeQuantity(price) {
