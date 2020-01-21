@@ -43,7 +43,7 @@ export class CheckoutComponent implements OnInit {
               () => {
                 alert('error');
               });
-            }
+            } 
    }
   
 }

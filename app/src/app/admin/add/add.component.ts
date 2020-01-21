@@ -35,8 +35,7 @@ export class AddComponent implements OnInit {
   }
 
   save() {
-    console.log(this.id);
-       const product = new Product(
+      const product = new Product(
          this.id + 1,
          this.form.get('product_name').value, 
          this.form.get('product_category').value,
