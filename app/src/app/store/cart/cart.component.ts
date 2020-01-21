@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
 list: Line[] = [];
   
-
   constructor(
     
   public cartService: CartService,
