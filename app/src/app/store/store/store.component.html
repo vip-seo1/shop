@@ -3,9 +3,9 @@
     <div class="text-right text-white bg-dark">
       <ng-container *ngIf="getCartProducts() > 0">
         <p>{{orderCount}} товара(ов)
-        <i (click)="getCartProducts()" class="material-icons md-48">
+        <a routerLink="/cart" (click)="getCartProducts()" class="material-icons md-48">
           shopping_cart
-        </i>
+        </a>
         </p>
     </ng-container>
   </div>
