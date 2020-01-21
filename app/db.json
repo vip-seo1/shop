@@ -75,7 +75,7 @@
       "name": "Corner Flags",
       "category": "Soccer",
       "description": "Give your playing field a professional touch",
-      "price": 34.95
+      "price": 34
     },
     {
       "id": 13,
@@ -137,88 +137,6 @@
         "address": "Dnepr"
       },
       "id": 2
-    },
-    {
-      "lines": [
-        {
-          "name": "Soccer Ball",
-          "quantity": 1,
-          "price": 19.5,
-          "subtotal": 19.5,
-          "id": 3
-        },
-        {
-          "name": "Kayak",
-          "quantity": 1,
-          "price": 275,
-          "subtotal": 275,
-          "id": 1
-        }
-      ],
-      "total": 294.5,
-      "client": {
-        "name": "admin",
-        "address": "Titova"
-      },
-      "id": 3
-    },
-    {
-      "lines": [
-        {
-          "name": "Kayak",
-          "quantity": 1,
-          "price": 47,
-          "subtotal": 47,
-          "id": 1
-        },
-        {
-          "name": "Soccer Ball",
-          "quantity": 1,
-          "price": 2022,
-          "subtotal": 2022,
-          "id": 3
-        }
-      ],
-      "total": 2069,
-      "client": {
-        "name": "sdfs",
-        "address": "sdfsdf"
-      },
-      "id": 4
-    },
-    {
-      "lines": [
-        {
-          "name": "Lifejacket",
-          "quantity": 1,
-          "price": 48.95,
-          "subtotal": 48.95,
-          "id": 2
-        }
-      ],
-      "total": 48.95,
-      "client": {
-        "name": "1",
-        "address": "1"
-      },
-      "id": 5
-    },
-    {
-      "lines": [
-        {
-          "name": "Corner Flags",
-          "quantity": 2,
-          "price": 33,
-          "subtotal": 66,
-          "id": 4
-        }
-      ],
-      "total": 66,
-      "client": {
-        "name": "fghf",
-        "address": "fghfg"
-      },
-      "id": 6
     }
   ]
 }

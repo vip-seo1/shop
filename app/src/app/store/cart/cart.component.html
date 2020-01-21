@@ -20,13 +20,13 @@
         <td>
           <button class="btn btn-success" (click)="addProductLine(product)">+</button> 
           {{product.quantity}}
-          <button class="btn btn-danger" (click)="delProductLine(product)">-</button>
+          <button class="btn btn-danger mr-2" (click)="delProductLine(product)">-</button>
         </td>
         <td>{{product.name}}</td>
         <td>{{product.price}}</td>
         <td>{{product.subtotal | currency}}</td>
         <td>
-          <button class="btn btn-sm btn-danger" (click)="deleteLine(product.id)">Remove</button>
+          <button class="btn btn-sm btn-danger ml-2" (click)="deleteLine(product.id)">Remove</button>
         </td>
       </tr>
   </ng-container>
